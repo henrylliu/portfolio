@@ -10,3 +10,15 @@ img {
     height: auto;
     width: auto;
 }
+
+#resume-header {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.timestamp, .location {
+    float: right;
+    font-style: italic;
+    margin-left: 1rem;
+  }
