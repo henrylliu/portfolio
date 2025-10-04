@@ -16,5 +16,21 @@
         </ul>
     </nav>
     <h1>Contact</h1>
+
+    <form action="mailto:hel044@ucsd.edu" method="POST" enctype="text/plain" >
+        <label for="email">
+            Email: 
+            <input type="email" name="email" id="email" required>
+        </label>
+        <label for="subject">
+            Subject:
+            <input type="text" name="subject" id="subject" required>
+        </label>
+        <label for="body">
+            Body:
+            <textarea name="body" id="body" cols="30" rows="3" required></textarea>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
