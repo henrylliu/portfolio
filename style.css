@@ -1,9 +1,18 @@
+html {
+  /* Accent color used throughout the site */
+  --color-accent: oklch(0.8618 0.1256 178.2);
+  accent-color: var(--color-accent);
+}
+
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  /* Set line height to 1.5 times the font size
+    and use the OS’s UI font as the website font
+  */
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1em;
+}
 
 img {
     max-width: 100%;
@@ -21,4 +30,36 @@ img {
     float: right;
     font-style: italic;
     margin-left: 1rem;
-  }
+}
+
+nav {
+  display: flex;
+  margin-bottom: 0.5em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav ul, nav li {
+  display: contents;
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+nav a.current {
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em;
+  font-weight: bold;
+}
