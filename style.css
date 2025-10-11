@@ -20,17 +20,7 @@ img {
     width: auto;
 }
 
-#resume-header {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.timestamp, .location {
-    float: right;
-    font-style: italic;
-    margin-left: 1rem;
-}
+/* ----------------------------NAVIGATION---------------------------- */
 
 nav {
   display: flex;
@@ -64,6 +54,8 @@ nav a.current {
   font-weight: bold;
 }
 
+/* ----------------------------CONTACT---------------------------- */
+
 input,
 textarea,
 button {
@@ -86,6 +78,81 @@ form button {
   grid-column: 1 / -1;
 }
 
+/* ----------------------------RESUME HEADER---------------------------- */
+
+#resume-header {
+    text-align: center;
+    margin-block: 2em;
+}
+
+#resume-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+#resume-header p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+}
+
+/* ----------------------------SECTION STYLING---------------------------- */
+section {
+  margin-bottom: 2em;
+}
+
+h2 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+ul {
+  margin-top: 0.5em;
+  padding-left: 1.2em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+.timestamp, .location {
+  float: right;
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+/* ----------------------------EXPERIENCE---------------------------- */
+
+
+#experience article p {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+}
+
+.timestamp,
+.location {
+  justify-self: end;
+  font-style: italic;
+  font-size: 0.9em;
+  color: gray;
+}
+
+/* ----------------------------SKILLS---------------------------- */
+
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+  gap: 0.5em;
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/* ----------------------------PROJECTS---------------------------- */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
