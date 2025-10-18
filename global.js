@@ -14,7 +14,7 @@ let pages = [
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
-  : "https://henrylliu.github.io/portfolio/";         // GitHub Pages 
+  : "/portfolio/";         // GitHub Pages 
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
@@ -29,6 +29,7 @@ for (let p of pages) {
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
+
     // open external links in new tab
     if (a.host !== location.host) {
         a.target = '_blank';
@@ -37,6 +38,6 @@ for (let p of pages) {
     a.classList.toggle(
         'current',
         a.host === location.host && a.pathname === location.pathname,
-        );
+    );
     nav.append(a);
 }
