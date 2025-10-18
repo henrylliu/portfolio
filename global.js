@@ -14,7 +14,7 @@ let pages = [
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
-  : "/website/";         // GitHub Pages 
+  : "https://henrylliu.github.io/portfolio/";         // GitHub Pages 
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
@@ -22,15 +22,21 @@ document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
-    
-    // next step: create link and add it to nav
+
     url = !url.startsWith('http') ? BASE_PATH + url : url;
-    nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+
+    // Create link
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+    // open external links in new tab
+    if (a.host !== location.host) {
+        a.target = '_blank';
+    }
+
+    a.classList.toggle(
+        'current',
+        a.host === location.host && a.pathname === location.pathname,
+        );
+    nav.append(a);
 }
-
-let navLinks = $$("nav a");
-
-let currentLink = navLinks.find(
-    (a) => a.host === location.host && a.pathname === location.pathname,
-);
-currentLink?.classList.add('current');
