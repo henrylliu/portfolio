@@ -2,6 +2,7 @@ html {
   /* Accent color used throughout the site */
   --color-accent: oklch(0.8618 0.1256 178.2);
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 
 body {
@@ -25,9 +26,8 @@ img {
 nav {
   display: flex;
   margin-bottom: 0.5em;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav ul, nav li {
@@ -45,11 +45,11 @@ nav a {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
   font-weight: bold;
 }
@@ -177,4 +177,19 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
+}
+
+/* ----------------------------LIGHT/DARK---------------------------- */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
+
+.color-scheme select {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.25em;
 }
