@@ -13,7 +13,7 @@
     },
     {
         "title": "Expository Visualization Project",
-        "image": "../images/ProteinByPrice.png",
+        "image": "/images/ProteinByPrice.png",
         "year": "2025",
         "description": "Created a static visualization to set forth an argument on best protein source by price per 100g of protein."
     },
