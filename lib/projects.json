@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Personal Portfolio Website",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built a responsive personal site using HTML, CSS, and JavaScript to showcase my work and resume."
+      },
+    {
+        "title": "Canvas to Calendar",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "WIP chrome extension to use Canvas API to fetch active Canvas assignments and import them to Google Calendar/Tasks"
+    },
+    {
+        "title": "Expository Visualization Project",
+        "image": "../images/ProteinByPrice.png",
+        "year": "2025",
+        "description": "Created a static visualization to set forth an argument on best protein source by price per 100g of protein."
+    },
+    {
+        "title": "Deceptive Visualization Project",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2025",
+        "description": "Created visualizations that show how figures can be manipulated to convince of either side of argument."
+    },
+    {
+        "title": "Similique non laudantium iusto?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2023",
+        "description": "Perspiciatis aliquam, rerum nobis assumenda ea quasi deleniti! Adipisci reprehenderit consectetur cumque expedita eveniet possimus qui esse, dolorum quidem? Laboriosam similique excepturi rem ad quod ab inventore repellendus provident expedita?"
+    },
+    {
+        "title": "Voluptatem omnis officiis dolore?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "description": "Placeat illum, esse, culpa repellat dolorem molestiae excepturi perferendis et, impedit quo repudiandae dolore aut suscipit nisi omnis dignissimos! Molestiae earum rem sunt. Laborum, eligendi. Adipisci voluptates ratione pariatur nisi."
+    },
+    {
+        "title": "Ab magni aperiam quas.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "description": "Aspernatur tempora totam earum suscipit similique sapiente error pariatur, nemo harum dicta natus praesentium dolor numquam ex voluptates magni quaerat optio dolores saepe delectus, repudiandae, vel commodi quos! Temporibus, recusandae!"
+    },
+    {
+        "title": "Debitis quisquam vero deleniti.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
+        "description": "Expedita doloremque dolore veritatis? Qui dolore, cupiditate eaque blanditiis velit vero molestias fuga ex atque nam quaerat nulla delectus animi autem ipsam, enim eos sapiente quis veniam aliquam illum obcaecati!"
+    },
+    {
+        "title": "Illo quo laborum obcaecati.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2023",
+        "description": "Tempore deserunt aspernatur, fugit quasi consectetur, alias maiores perspiciatis quis iusto fugiat error dolorum odio, vitae placeat eius deleniti voluptatum harum magnam qui non repudiandae! Perspiciatis sed optio excepturi. Tempora."
+    },
+    {
+        "title": "Porro id ut atque.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2020",
+        "description": "Laudantium assumenda cumque nemo fugit, eos delectus eaque facilis quasi quisquam aliquid sunt corrupti. Laudantium voluptas, alias, dolores eum quisquam doloribus odit velit cum consequatur omnis quasi, adipisci perferendis repellendus."
+    },
+    {
+        "title": "Ipsam facilis rem voluptatum.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
+        "description": "Possimus laudantium, voluptate illum explicabo reprehenderit atque debitis dolores recusandae id quisquam doloremque culpa facere quasi error iure labore architecto numquam consectetur. Magnam ea, cum autem laborum sunt id quod."
+    },
+    {
+        "title": "Laboriosam illo sed quis?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "description": "Quisquam, recusandae dignissimos delectus fuga deleniti libero esse modi in. Voluptatem ullam facilis aliquam adipisci doloribus incidunt obcaecati fugit odit soluta alias odio aut culpa, doloremque, omnis dolore libero nisi."
+    }
+]
