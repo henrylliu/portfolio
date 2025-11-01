@@ -166,6 +166,25 @@ li {
   gap: 1em;
 }
 
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.project-description {
+  order: 1;
+}
+
+.project-year {
+  order: 2;
+  color: gray;
+  font-size: 1.1em;
+  margin-top: 0.3em;
+  font-family: Baskerville, "Baskerville Old Face", Garamond, serif;
+  font-variant-numeric: oldstyle-nums;
+}
+
 .projects h2 {
   margin: 0;
 }
