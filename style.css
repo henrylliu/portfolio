@@ -201,9 +201,44 @@ h1, h2, h3, h4, h5, h6 {
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
-
   overflow: visible;
 }
+
+/* ----------------------------LEGEND---------------------------- */
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 1em;
+  margin-right: 1em; 
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 0.75em;
+  margin-top: 1em;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* space between swatch and text */
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+
 
 /* ----------------------------LIGHT/DARK---------------------------- */
 .color-scheme {
