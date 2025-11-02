@@ -237,6 +237,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 1em;
   background-color: var(--color);
   border-radius: 50%;
+  transition: 300ms; /* smooth color change */
 }
 
 
@@ -291,4 +292,20 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   font-weight: 500;
   margin: 0;
+}
+
+/* ----------------------------HOVER---------------------------- */
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+path {
+  transition: 300ms;
+}
+
+
+/* ----------------------------SELECT---------------------------- */
+path.selected {
+  fill: oklch(60% 0% 0) !important;
 }
