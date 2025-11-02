@@ -10,37 +10,8 @@ const titleElement = document.querySelector('.projects-title');
 if (titleElement) {
   titleElement.textContent = `${projects.length} Projects`;
 }
-
-let rolledData = d3.rollups(
-  projects,
-  (v) => v.length,
-  (d) => d.year,
-);
-
-
-let data = rolledData.map(([year, count]) => {
-  return { value: count, label: year };
-});
-let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
-let sliceGenerator = d3.pie().value((d) => d.value);
-let arcData = sliceGenerator(data);
-let arcs = arcData.map((d) => arcGenerator(d));
-let colors = d3.scaleOrdinal(d3.schemeTableau10);
-
-arcs.forEach((arc, idx) => {
-  d3.select('svg')
-    .append('path')
-    .attr('d', arc)
-    .attr('fill', colors(idx)) // Fill in the attribute for fill color via indexing the colors variable
-})
-
-let legend = d3.select('.legend');
-data.forEach((d, idx) => {
-  legend
-    .append('li')
-    .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-    .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
-});
+const colors = d3.scaleOrdinal(d3.schemeTableau10);
+const legend = d3.select('.legend');
 
 let query = '';
 let searchInput = document.querySelector('.searchBar');
