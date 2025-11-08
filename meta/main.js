@@ -60,11 +60,6 @@ function renderCommitInfo(data, commits) {
     dl.append('dt').text('Number of files');
     dl.append('dd').text(numFiles);
 
-    // Average amount of lines in a file
-    const avgLinesPerFile = data.length / numFiles;
-    dl.append('dt').text('Average number of lines');
-    dl.append('dd').text(avgLinesPerFile);
-
     // Add time of day that most work is done
     const workByPeriod = d3.rollups(
         data,
