@@ -104,7 +104,7 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: none;
   padding-bottom: 0.2em;
   margin-bottom: 0.5em;
 }
