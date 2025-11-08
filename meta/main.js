@@ -48,7 +48,7 @@ function renderCommitInfo(data, commits) {
     const dl = d3.select('#stats').append('dl').attr('class', 'stats');
   
     // Add total LOC
-    dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
+    dl.append('dt').html('Total&nbsp;<abbr title="Lines of code">LOC</abbr>');
     dl.append('dd').text(data.length);
   
     // Add total commits
