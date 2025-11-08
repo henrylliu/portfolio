@@ -309,3 +309,56 @@ path {
 path.selected {
   fill: oklch(60% 0% 0) !important;
 }
+
+
+/* ----------------------------STATS---------------------------- */
+.stats {
+  display: grid;
+  grid-template-rows: auto auto; /* top row = dt, bottom row = dd */
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  text-align: center;
+  margin: 2rem auto;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  width: fit-content;
+  background-color: transparent; /* works with dark mode */
+}
+
+.stats dt,
+.stats dd {
+  margin: 0;
+  padding: 1em;
+  min-width: 10em; /* keeps boxes equal width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+/* Headings row */
+.stats dt {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  color: oklch(60% 0 0 / 0.8); /* subtle gray that adapts well to both modes */
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* Values row */
+.stats dd {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: inherit; /* inherits light/dark text */
+}
+
+/* Remove right border from last column for clean edge */
+.stats dt:nth-last-of-type(1),
+.stats dd:nth-last-of-type(1) {
+  border-right: none;
+}
