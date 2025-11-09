@@ -362,3 +362,16 @@ path.selected {
 .stats dd:nth-last-of-type(1) {
   border-right: none;
 }
+
+.gridlines .tick line {
+  stroke: currentColor;
+  stroke-opacity: 0.15;
+  stroke-width: 0.5;
+}
+
+.gridlines .domain,
+.axis path.domain {
+  stroke: currentColor;
+  stroke-opacity: 0.1;
+  stroke-width: 0.5;
+}
