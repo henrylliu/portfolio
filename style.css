@@ -363,6 +363,9 @@ path.selected {
   border-right: none;
 }
 
+/* ----------------------------GRIDLINES---------------------------- */
+
+
 .gridlines .tick line {
   stroke: currentColor;
   stroke-opacity: 0.15;
@@ -394,6 +397,11 @@ dl.info dd {
 
 .tooltip {
   position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px #ccc;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  padding: 0.5em 1em;
   top: 1em;
   left: 1em;
 }
