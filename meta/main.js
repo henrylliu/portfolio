@@ -165,10 +165,11 @@ function renderScatterPlot(data, commits) {
         .attr('fill', 'steelblue')
         .on('mouseenter', (event, commit) => {
             renderTooltipContent(commit);
+            updateTooltipVisibility(true);
+            updateTooltipPosition(event);
         })
         .on('mouseleave', () => {
-        // TODO: Hide the tooltip
-            
+            updateTooltipVisibility(false);
         });
 
 }
@@ -194,6 +195,17 @@ function renderTooltipContent(commit) {
     author.textContent = commit.author || 'Unknown';
     lines.textContent = commit.totalLines || 0;
 }
+
+function updateTooltipVisibility(isVisible) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.hidden = !isVisible;
+}
+
+function updateTooltipPosition(event) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+  }
 
 
 let data = await loadData();
