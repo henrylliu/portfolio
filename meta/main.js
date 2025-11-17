@@ -126,6 +126,10 @@ function renderScatterPlot(data, commits) {
     const yAxis = d3
         .axisLeft(yScale)
         .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
+
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
     // Add X axis
     svg
       .append('g')
@@ -137,14 +141,7 @@ function renderScatterPlot(data, commits) {
       .attr('transform', `translate(${usableArea.left}, 0)`)
       .call(yAxis);
     const dots = svg.append('g').attr('class', 'dots');
-    dots
-        .selectAll('circle')
-        .data(commits)
-        .join('circle')
-        .attr('cx', (d) => xScale(d.datetime))
-        .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
-        .attr('fill', 'steelblue');
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([4, 30]); // adjust these values based on your experimentation
 
     // Add gridlines BEFORE the axes
     const gridlines = svg
@@ -157,21 +154,24 @@ function renderScatterPlot(data, commits) {
 
     dots
         .selectAll('circle')
-        .data(commits)
+        .data(sortedCommits)
         .join('circle')
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
+        .attr('r', (d) => rScale(d.totalLines))
         .attr('fill', 'steelblue')
+        .style('fill-opacity', 0.7) // Add transparency for overlapping dots
         .on('mouseenter', (event, commit) => {
+            d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
             renderTooltipContent(commit);
             updateTooltipVisibility(true);
             updateTooltipPosition(event);
         })
-        .on('mouseleave', () => {
+        .on('mouseleave', (event) => {
+            d3.select(event.currentTarget).style('fill-opacity', 0.7);
             updateTooltipVisibility(false);
         });
-
+        createBrushSelector(svg);
 }
 
 function renderTooltipContent(commit) {
@@ -205,7 +205,15 @@ function updateTooltipPosition(event) {
     const tooltip = document.getElementById('commit-tooltip');
     tooltip.style.left = `${event.clientX}px`;
     tooltip.style.top = `${event.clientY}px`;
-  }
+}
+
+function createBrushSelector(svg) {
+    // Create brush
+    svg.call(d3.brush());
+
+    // Raise dots and everything after overlay
+    svg.selectAll('.dots, .overlay ~ *').raise();
+}
 
 
 let data = await loadData();
