@@ -1,7 +1,7 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
 let xScale, yScale;
-
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
     const data = await d3.csv('loc.csv', (row) => ({
@@ -315,7 +315,8 @@ function updateFileDisplay(filteredCommits) {
   .selectAll('div')
   .data((d) => d.lines)
   .join('div')
-  .attr('class', 'loc');
+  .attr('class', 'loc')
+  .attr('style', (d) => `--color: ${colors(d.type)}`);
 }
 
 function onTimeSliderChange() {
