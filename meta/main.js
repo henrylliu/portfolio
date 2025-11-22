@@ -1,4 +1,6 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
+
 
 let xScale, yScale;
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
@@ -44,7 +46,8 @@ function processCommits(data) {
         });
   
         return ret;
-    });
+    })
+    .sort((a, b) => a.datetime - b.datetime);
 }
 
 function renderCommitInfo(data, commits) {
@@ -382,8 +385,6 @@ function updateScatterPlot(data, commits) {
       });
 }
 
-
-
 let data = await loadData();
 let commits = processCommits(data);
 
@@ -428,4 +429,21 @@ d3.select('#scatter-story')
     } files.
 		Then I looked over all I had made, and I saw that it was very good.
 	`,
-  );
+);
+
+function onStepEnter(response) {
+  const commit = response.element.__data__;
+  const commitDate = commit.datetime;
+  filteredCommits = commits.filter(d => d.datetime <= commitDate);
+  // Update the visualizations
+  updateScatterPlot(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
+}
+
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+  })
+  .onStepEnter(onStepEnter);
