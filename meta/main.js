@@ -309,7 +309,12 @@ function updateFileDisplay(filteredCommits) {
 
   // This code updates the div info
   filesContainer.select('dt > code').text((d) => d.name);
-  filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
+  filesContainer
+  .select('dd')
+  .selectAll('div')
+  .data((d) => d.lines)
+  .join('div')
+  .attr('class', 'loc');
 }
 
 function onTimeSliderChange() {
