@@ -427,7 +427,6 @@ d3.select('#scatter-story')
         (d) => d.file,
       ).length
     } files.
-		Then I looked over all I had made, and I saw that it was very good.
 	`,
 );
 
